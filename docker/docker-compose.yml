@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL:?DATABASE_URL is required}
+      - ADMIN_USER=${ADMIN_USER:?ADMIN_USER is required}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:?ADMIN_PASSWORD is required}
+      - ADMIN_SECRET=${ADMIN_SECRET:?ADMIN_SECRET is required}
+      - SITE_URL=${SITE_URL:-http://localhost:3000}
