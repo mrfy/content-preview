@@ -9,7 +9,18 @@ DOCKERFILE="docker/Dockerfile"
 BRANCH="main"
 
 # --- PARAM ---
-BUMP_TYPE=${1:-patch} # patch | minor | major
+echo "Select version bump:"
+select opt in "patch" "minor" "major"; do
+  case $opt in
+    patch|minor|major)
+      BUMP_TYPE=$opt
+      break
+      ;;
+    *)
+      echo "Invalid option"
+      ;;
+  esac
+done
 
 # --- CHECK CLEAN GIT ---
 if [[ -n $(git status --porcelain) ]]; then
