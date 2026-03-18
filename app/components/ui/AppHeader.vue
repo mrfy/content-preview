@@ -21,9 +21,10 @@
             v-for="link in navLinks"
             :key="link.to"
             :to="link.to"
-            class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-500 transition-all duration-200 hover:text-slate-800 hover:bg-slate-50"
+            class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-500 transition-all duration-200 hover:text-slate-800 hover:bg-slate-50 inline-flex items-center gap-2"
             active-class="!text-indigo-600 !bg-indigo-50/60"
           >
+            <img :src="link.icon" :alt="link.label" class="w-4 h-4" />
             {{ link.label }}
           </NuxtLink>
         </nav>
@@ -59,10 +60,11 @@
             v-for="link in navLinks"
             :key="link.to"
             :to="link.to"
-            class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+            class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
             active-class="!text-indigo-600 !bg-indigo-50/60"
             @click="isMenuOpen = false"
           >
+            <img :src="link.icon" :alt="link.label" class="w-4 h-4" />
             {{ link.label }}
           </NuxtLink>
         </nav>
@@ -75,7 +77,7 @@
 const isMenuOpen = ref(false)
 
 const navLinks = [
-  { to: '/linkedin-preview', label: 'LinkedIn Preview' },
-  { to: '/email-preview', label: 'Email Preview' },
+  { to: '/linkedin-preview', label: 'LinkedIn Preview', icon: '/LinkedIn_icon.svg' },
+  { to: '/email-preview', label: 'Email Preview', icon: '/Email_icon.svg' },
 ]
 </script>

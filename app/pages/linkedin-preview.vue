@@ -3,7 +3,10 @@
     <!-- Page header -->
     <div class="flex items-center justify-between mb-8">
       <div>
-        <h1 class="text-2xl font-bold text-slate-900 tracking-tight">LinkedIn Preview</h1>
+        <h1 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+          <img src="/LinkedIn_icon.svg" alt="LinkedIn" class="w-7 h-7" />
+          LinkedIn Preview
+        </h1>
         <p class="text-sm text-slate-400 mt-1">Write your post and see how it looks in the feed</p>
       </div>
       <UiExportButton target-id="linkedin-preview-container" filename="linkedin-preview.png" @exported="onExport" />
