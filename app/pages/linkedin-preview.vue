@@ -7,7 +7,7 @@
           <img :src="'/LinkedIn_icon.svg'" alt="LinkedIn" class="w-7 h-7" />
           LinkedIn Preview
         </h1>
-        <p class="text-sm text-slate-400 mt-1">Write your post and see how it looks in the feed</p>
+        <p class="text-sm text-slate-500 mt-1">Write your post and see how it looks in the feed</p>
       </div>
       <UiExportButton target-id="linkedin-preview-container" filename="linkedin-preview.png" @exported="onExport" />
     </div>

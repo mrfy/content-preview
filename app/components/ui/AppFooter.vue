@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-slate-50 border-t border-slate-100">
+  <footer class="bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Brand -->
@@ -13,23 +13,23 @@
             </div>
             <span class="text-sm font-bold text-slate-700">Content Preview Tools</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <p class="text-xs text-slate-500 leading-relaxed">
             Preview your marketing content before publishing. Free, fast, and private.
           </p>
         </div>
 
         <!-- Tools -->
         <div>
-          <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-3">Tools</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-3">Tools</h4>
           <ul class="space-y-2">
             <li>
-              <NuxtLink to="/linkedin-preview" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+              <NuxtLink to="/linkedin-preview" class="inline-flex items-center gap-1.5 text-sm text-slate-600 hover:text-indigo-600 transition-colors">
                 <img :src="'/LinkedIn_icon.svg'" alt="LinkedIn" class="w-4 h-4" />
                 LinkedIn Preview
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/email-preview" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+              <NuxtLink to="/email-preview" class="inline-flex items-center gap-1.5 text-sm text-slate-600 hover:text-indigo-600 transition-colors">
                 <img :src="'/Email_icon.svg'" alt="Email" class="w-4 h-4" />
                 Email Preview
               </NuxtLink>
@@ -39,15 +39,15 @@
 
         <!-- Resources -->
         <div>
-          <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-3">Resources</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-3">Resources</h4>
           <ul class="space-y-2">
             <li>
-              <NuxtLink to="/linkedin-post-preview" class="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+              <NuxtLink to="/linkedin-post-preview" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors">
                 LinkedIn Post Preview Guide
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/email-html-preview" class="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+              <NuxtLink to="/email-html-preview" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors">
                 Email HTML Preview Guide
               </NuxtLink>
             </li>
@@ -56,15 +56,15 @@
 
         <!-- Legal -->
         <div>
-          <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-3">Legal</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-3">Legal</h4>
           <ul class="space-y-2">
             <li>
-              <NuxtLink to="/privacy-policy" class="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+              <NuxtLink to="/privacy-policy" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors">
                 Privacy Policy
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/terms" class="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+              <NuxtLink to="/terms" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors">
                 Terms of Service
               </NuxtLink>
             </li>
@@ -72,8 +72,8 @@
         </div>
       </div>
 
-      <div class="mt-10 pt-6 border-t border-slate-200/60">
-        <p class="text-xs text-slate-400 text-center">
+      <div class="mt-10 pt-6 border-t border-slate-200">
+        <p class="text-xs text-slate-500 text-center">
           &copy; {{ new Date().getFullYear() }} Content Preview Tools. All content stays in your browser.
         </p>
       </div>

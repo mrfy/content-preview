@@ -2,7 +2,7 @@
   <div class="space-y-3">
     <!-- Template gallery -->
     <div>
-      <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-2">Templates</h4>
+      <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-2">Templates</h4>
       <div class="flex flex-wrap gap-1.5">
         <button
           v-for="(tpl, i) in templates"
@@ -10,7 +10,7 @@
           class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors"
           :class="activeTemplate === i
             ? 'bg-indigo-100 text-indigo-700'
-            : 'bg-slate-50 text-slate-500 hover:bg-slate-100'"
+            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
           :title="tpl.description"
           @click="selectTemplate(i)"
         >

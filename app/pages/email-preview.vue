@@ -7,7 +7,7 @@
           <img :src="'/Email_icon.svg'" alt="Email" class="w-7 h-7" />
           Email Preview
         </h1>
-        <p class="text-sm text-slate-400 mt-1">Paste HTML and see how your email renders</p>
+        <p class="text-sm text-slate-500 mt-1">Paste HTML and see how your email renders</p>
       </div>
       <UiExportButton target-id="email-preview-container" filename="email-preview.png" @exported="onExport" />
     </div>

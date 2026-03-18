@@ -2,7 +2,7 @@
   <div class="space-y-5">
     <!-- Profile section -->
     <div class="space-y-3">
-      <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">Profile</h4>
+      <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Profile</h4>
       <div class="flex items-center gap-3">
         <!-- Avatar upload -->
         <div
@@ -11,7 +11,7 @@
           @click="avatarInput?.click()"
         >
           <img v-if="profileAvatarUrl" :src="profileAvatarUrl" alt="Avatar" class="w-full h-full object-cover" />
-          <svg v-else class="w-4 h-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <svg v-else class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
           </svg>
         </div>
@@ -49,7 +49,7 @@
 
     <!-- Post text -->
     <div>
-      <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-2">Post</h4>
+      <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-2">Post</h4>
       <textarea
         v-model="postText"
         placeholder="What do you want to talk about?"

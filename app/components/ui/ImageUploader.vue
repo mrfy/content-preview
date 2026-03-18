@@ -6,8 +6,8 @@
       class="relative border-2 border-dashed rounded-xl transition-all duration-300 cursor-pointer overflow-hidden"
       :class="[
         isDragging
-          ? 'border-indigo-400 bg-indigo-50/50 scale-[0.99]'
-          : 'border-slate-200 hover:border-slate-300 bg-slate-50/50 hover:bg-slate-50'
+          ? 'border-indigo-400 bg-indigo-50 scale-[0.99]'
+          : 'border-slate-300 hover:border-slate-400 bg-slate-50 hover:bg-slate-100'
       ]"
       @dragover.prevent="onDragOver"
       @dragleave.prevent="onDragLeave"
@@ -19,14 +19,14 @@
           class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-3 transition-transform duration-300"
           :class="{ 'scale-110 bg-indigo-100': isDragging }"
         >
-          <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <svg class="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
           </svg>
         </div>
-        <p class="text-sm font-medium text-slate-500">
+        <p class="text-sm font-medium text-slate-600">
           Drop image here or <span class="text-indigo-500">browse</span>
         </p>
-        <p class="text-xs text-slate-400 mt-1">JPG, PNG, GIF, WebP - max 5 MB</p>
+        <p class="text-xs text-slate-500 mt-1">JPG, PNG, GIF, WebP - max 5 MB</p>
       </div>
       <input
         ref="fileInput"

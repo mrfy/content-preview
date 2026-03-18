@@ -3,16 +3,16 @@
     <!-- Hero -->
     <section class="relative min-h-[85vh] flex items-center">
       <!-- Background layers -->
-      <div class="absolute inset-0 bg-[#fafbff]" />
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.08)_0%,transparent_50%)]" />
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(139,92,246,0.06)_0%,transparent_70%)]" />
+      <div class="absolute inset-0 bg-[#f5f7ff]" />
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15)_0%,transparent_50%)]" />
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(139,92,246,0.12)_0%,transparent_70%)]" />
       <!-- Grid dots pattern -->
-      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #6366f1 1px, transparent 1px); background-size: 32px 32px;" />
+      <div class="absolute inset-0 opacity-[0.06]" style="background-image: radial-gradient(circle, #6366f1 1px, transparent 1px); background-size: 32px 32px;" />
 
       <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 w-full">
         <div class="max-w-3xl">
           <!-- Badge -->
-          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-8 animate-[fadeInUp_0.5s_ease-out]">
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 animate-[fadeInUp_0.5s_ease-out]">
             <span class="flex h-2 w-2 relative">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -33,7 +33,7 @@
           </h1>
 
           <!-- Subheadline -->
-          <p class="mt-7 text-lg sm:text-xl text-slate-500 leading-relaxed max-w-xl animate-[fadeInUp_0.6s_ease-out_0.2s_both]">
+          <p class="mt-7 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl animate-[fadeInUp_0.6s_ease-out_0.2s_both]">
             Preview your LinkedIn posts and marketing emails exactly as they'll appear. Catch mistakes, perfect your message, export pixel-perfect screenshots.
           </p>
 
@@ -48,8 +48,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </NuxtLink>
-            <span class="text-sm text-slate-400 flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <span class="text-sm text-slate-500 flex items-center gap-2">
+              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Takes 30 seconds
@@ -61,7 +61,7 @@
         <div class="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-[340px] animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <div class="relative">
             <!-- LinkedIn mock card -->
-            <div class="bg-white rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-100 p-5 rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+            <div class="bg-white rounded-2xl shadow-2xl shadow-slate-300/50 border border-slate-200 p-5 rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
               <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-violet-500" />
                 <div>
@@ -89,7 +89,7 @@
             </div>
 
             <!-- Email mock card (behind) -->
-            <div class="absolute -bottom-6 -left-8 w-48 bg-white rounded-xl shadow-xl shadow-slate-200/40 border border-slate-100 p-3 rotate-[3deg]">
+            <div class="absolute -bottom-6 -left-8 w-48 bg-white rounded-xl shadow-xl shadow-slate-300/40 border border-slate-200 p-3 rotate-[3deg]">
               <div class="h-6 bg-gradient-to-r from-violet-400 to-indigo-500 rounded-md mb-2" />
               <div class="space-y-1.5">
                 <div class="h-1.5 w-full bg-slate-100 rounded-full" />
@@ -104,11 +104,11 @@
     </section>
 
     <!-- Trust bar -->
-    <section class="border-y border-slate-100 bg-white">
+    <section class="border-y border-slate-200 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-          <div v-for="trust in trustSignals" :key="trust.text" class="flex items-center gap-2.5 text-sm text-slate-500">
-            <div class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+          <div v-for="trust in trustSignals" :key="trust.text" class="flex items-center gap-2.5 text-sm text-slate-600">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
               <span v-html="trust.icon" />
             </div>
             <span class="font-medium">{{ trust.text }}</span>
@@ -121,7 +121,7 @@
     <section class="bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div class="text-center mb-14">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-500 mb-3">Available Now</p>
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-600 mb-3">Available Now</p>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Choose your preview tool</h2>
         </div>
 
@@ -129,11 +129,11 @@
           <!-- LinkedIn card -->
           <NuxtLink
             to="/linkedin-preview"
-            class="group relative bg-gradient-to-b from-white to-slate-50/50 rounded-2xl border border-slate-200/80 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-100/30 hover:border-indigo-200 hover:-translate-y-1"
+            class="group relative bg-gradient-to-b from-white to-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-200/40 hover:border-indigo-300 hover:-translate-y-1"
           >
             <!-- Mini preview illustration -->
             <div class="px-8 pt-8 pb-4">
-              <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-4 mb-6 transition-transform duration-300 group-hover:scale-[1.02]">
+              <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 mb-6 transition-transform duration-300 group-hover:scale-[1.02]">
                 <div class="flex items-center gap-2.5 mb-3">
                   <div class="w-8 h-8 rounded-full bg-gradient-to-br from-sky-400 to-blue-500 flex-shrink-0" />
                   <div>
@@ -165,7 +165,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">LinkedIn Post Preview</h3>
               </div>
-              <p class="text-sm text-slate-500 leading-relaxed mb-5">
+              <p class="text-sm text-slate-600 leading-relaxed mb-5">
                 Write your post with hashtags, add images, and see exactly how it'll appear in the feed. Dark mode included.
               </p>
               <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 group-hover:gap-2.5 transition-all duration-300">
@@ -180,7 +180,7 @@
           <!-- Email card -->
           <NuxtLink
             to="/email-preview"
-            class="group relative bg-gradient-to-b from-white to-slate-50/50 rounded-2xl border border-slate-200/80 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-100/30 hover:border-violet-200 hover:-translate-y-1"
+            class="group relative bg-gradient-to-b from-white to-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-200/40 hover:border-violet-300 hover:-translate-y-1"
           >
             <!-- Mini preview illustration -->
             <div class="px-8 pt-8 pb-4">
@@ -211,7 +211,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Email HTML Preview</h3>
               </div>
-              <p class="text-sm text-slate-500 leading-relaxed mb-5">
+              <p class="text-sm text-slate-600 leading-relaxed mb-5">
                 Paste HTML and see how your email renders. 5 built-in templates, responsive toggle, safe sanitization.
               </p>
               <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 group-hover:gap-2.5 transition-all duration-300">
@@ -227,23 +227,23 @@
     </section>
 
     <!-- How it works -->
-    <section class="bg-[#fafbff] border-y border-slate-100">
+    <section class="bg-[#f0f2ff] border-y border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div class="text-center mb-16">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-500 mb-3">How It Works</p>
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-600 mb-3">How It Works</p>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Three steps. Zero friction.</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           <div v-for="(step, i) in steps" :key="step.title" class="relative text-center">
             <!-- Step number -->
-            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mx-auto mb-5 relative">
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-md flex items-center justify-center mx-auto mb-5 relative">
               <span class="text-lg font-extrabold text-indigo-600">{{ i + 1 }}</span>
             </div>
             <!-- Connector line (between steps) -->
             <div v-if="i < 2" class="hidden md:block absolute top-7 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-slate-200" />
             <h3 class="text-base font-bold text-slate-900 mb-2">{{ step.title }}</h3>
-            <p class="text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">{{ step.desc }}</p>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">{{ step.desc }}</p>
           </div>
         </div>
       </div>
@@ -253,7 +253,7 @@
     <section class="bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div class="text-center mb-14">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-500 mb-3">Why Content Preview Tools</p>
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-600 mb-3">Why Content Preview Tools</p>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Built for people who care<br class="hidden sm:block" /> about how things look</h2>
         </div>
 
@@ -261,7 +261,7 @@
           <div
             v-for="feature in features"
             :key="feature.title"
-            class="group p-6 rounded-2xl border border-slate-100 bg-slate-50/30 hover:bg-white hover:border-slate-200 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300"
+            class="group p-6 rounded-2xl border border-slate-200 bg-white/60 hover:bg-white hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300"
           >
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
@@ -270,19 +270,19 @@
               <span v-html="feature.icon" />
             </div>
             <h3 class="text-sm font-bold text-slate-900 mb-1.5">{{ feature.title }}</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">{{ feature.desc }}</p>
+            <p class="text-xs text-slate-600 leading-relaxed">{{ feature.desc }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Coming soon -->
-    <section class="bg-[#fafbff] border-t border-slate-100">
+    <section class="bg-[#f0f2ff] border-t border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div class="text-center mb-14">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-amber-500 mb-3">Coming Soon</p>
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-amber-600 mb-3">Coming Soon</p>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">More platforms on the way</h2>
-          <p class="mt-3 text-sm text-slate-500">We're building previews for every major platform.</p>
+          <p class="mt-3 text-sm text-slate-600">We're building previews for every major platform.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -290,7 +290,7 @@
             v-for="tool in comingSoon"
             :key="tool.name"
             :to="tool.to"
-            class="group relative bg-white rounded-2xl border border-dashed border-slate-200 p-6 transition-all duration-300 hover:border-solid hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 hover:-translate-y-0.5"
+            class="group relative bg-white rounded-2xl border border-dashed border-slate-300 p-6 transition-all duration-300 hover:border-solid hover:border-slate-400 hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-0.5"
           >
             <div class="flex items-center justify-between mb-4">
               <div class="w-11 h-11 rounded-xl flex items-center justify-center" :class="tool.bgClass">
@@ -299,7 +299,7 @@
               <span class="px-2.5 py-1 rounded-full bg-amber-50 border border-amber-100 text-[10px] font-bold text-amber-600 uppercase tracking-wider">Soon</span>
             </div>
             <h4 class="text-sm font-bold text-slate-800 mb-1">{{ tool.name }}</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">{{ tool.desc }}</p>
+            <p class="text-xs text-slate-500 leading-relaxed">{{ tool.desc }}</p>
           </NuxtLink>
         </div>
       </div>
