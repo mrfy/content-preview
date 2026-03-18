@@ -161,7 +161,7 @@
             <div class="px-8 pb-8">
               <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <img src="/LinkedIn_icon.svg" alt="LinkedIn" class="w-6 h-6" />
+                  <img :src="'/LinkedIn_icon.svg'" alt="LinkedIn" class="w-6 h-6" />
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">LinkedIn Post Preview</h3>
               </div>
@@ -207,7 +207,7 @@
             <div class="px-8 pb-8">
               <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center">
-                  <img src="/Email_icon.svg" alt="Email" class="w-6 h-6" />
+                  <img :src="'/Email_icon.svg'" alt="Email" class="w-6 h-6" />
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Email HTML Preview</h3>
               </div>

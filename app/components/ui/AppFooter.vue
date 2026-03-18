@@ -24,13 +24,13 @@
           <ul class="space-y-2">
             <li>
               <NuxtLink to="/linkedin-preview" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 transition-colors">
-                <img src="/LinkedIn_icon.svg" alt="LinkedIn" class="w-4 h-4" />
+                <img :src="'/LinkedIn_icon.svg'" alt="LinkedIn" class="w-4 h-4" />
                 LinkedIn Preview
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/email-preview" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 transition-colors">
-                <img src="/Email_icon.svg" alt="Email" class="w-4 h-4" />
+                <img :src="'/Email_icon.svg'" alt="Email" class="w-4 h-4" />
                 Email Preview
               </NuxtLink>
             </li>

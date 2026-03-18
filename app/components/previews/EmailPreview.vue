@@ -45,7 +45,7 @@
         </div>
         <div v-else class="py-16 text-center">
           <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mx-auto mb-3">
-            <img src="/Email_icon.svg" alt="Email" class="w-6 h-6 opacity-30" />
+            <img :src="'/Email_icon.svg'" alt="Email" class="w-6 h-6 opacity-30" />
           </div>
           <p class="text-sm text-slate-300">Paste HTML to preview your email</p>
         </div>

@@ -4,7 +4,7 @@
     <section class="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-indigo-50/30">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 sm:pt-24 sm:pb-16">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight flex items-center gap-3">
-          <img src="/LinkedIn_icon.svg" alt="LinkedIn" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <img :src="'/LinkedIn_icon.svg'" alt="LinkedIn" class="w-10 h-10 sm:w-12 sm:h-12" />
           LinkedIn Post Preview
         </h1>
         <p class="mt-4 text-lg text-slate-500 max-w-2xl leading-relaxed">
