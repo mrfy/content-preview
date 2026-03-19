@@ -26,8 +26,17 @@
           </p>
           <p class="text-xs leading-tight mt-0.5 flex items-center gap-1" :class="isDarkMode ? 'text-[rgba(255,255,255,0.6)]' : 'text-[rgba(0,0,0,0.6)]'">
             1h &middot;
-            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 16 16">
+            <!-- Globe (public) -->
+            <svg v-if="visibility === 'public'" class="w-3 h-3" fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 1a7 7 0 107 7 7 7 0 00-7-7zM3 8a5 5 0 011.1-3.14l.73.73A.5.5 0 005 6.08V7.5a.5.5 0 00.5.5h1a.5.5 0 01.5.5v.5a1.5 1.5 0 001.5 1.5H9a.5.5 0 01.5.5v1.38A5 5 0 013 8zm8.89 3.14A5 5 0 0013 8a5 5 0 00-4.5-4.97V4.5A1.5 1.5 0 0010 6h.5a.5.5 0 01.5.5V8a.5.5 0 00.5.5h.89l.5.86z"/>
+            </svg>
+            <!-- People (connections) -->
+            <svg v-else-if="visibility === 'connections'" class="w-3 h-3" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M6 8a2 2 0 100-4 2 2 0 000 4zm4-2a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM6 9c-2.67 0-5 1.34-5 3v1h10v-1c0-1.66-2.33-3-5-3zm4.5.5c-0.5 0-1 .1-1.42.28C10.28 10.6 11 11.5 11 12.5V13h4v-1c0-1.38-2-2.5-4.5-2.5z"/>
+            </svg>
+            <!-- Group -->
+            <svg v-else class="w-3 h-3" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M3.5 6a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm9 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM8 7a2 2 0 100-4 2 2 0 000 4zM1 12c0-1.38 1.56-2.5 3.5-2.5.36 0 .7.04 1.02.11C4.56 10.24 4 11.06 4 12v1H1v-1zm14 0c0-1.38-1.56-2.5-3.5-2.5-.36 0-.7.04-1.02.11.96.63 1.52 1.45 1.52 2.39v1H15v-1zM8 8c-2.67 0-5 1.34-5 3v1h10v-1c0-1.66-2.33-3-5-3z"/>
             </svg>
           </p>
         </div>
@@ -117,7 +126,7 @@
 </template>
 
 <script setup lang="ts">
-const { imageUrl, profileName, profileHeadline, profileAvatarUrl, isDarkMode, isExpanded, shouldTruncate, formattedSegments, postText, toggleExpand } = useLinkedInPreview()
+const { imageUrl, profileName, profileHeadline, profileAvatarUrl, isDarkMode, visibility, isExpanded, shouldTruncate, formattedSegments, postText, toggleExpand } = useLinkedInPreview()
 
 const actions = [
   {

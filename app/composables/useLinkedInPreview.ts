@@ -15,9 +15,30 @@ const profileHeadline = ref('Your Headline')
 const profileAvatarUrl = ref<string | null>(null)
 const profileAvatarFile = ref<File | null>(null)
 const isDarkMode = ref(false)
+const visibility = ref<'public' | 'connections' | 'group'>('public')
 const isExpanded = ref(false)
+let lsWatchersActive = false
+
+function hydrateFromLocalStorage() {
+  if (lsWatchersActive) return
+  postText.value = localStorage.getItem('cpt_li_postText') ?? ''
+  profileName.value = localStorage.getItem('cpt_li_profileName') ?? 'Your Name'
+  profileHeadline.value = localStorage.getItem('cpt_li_profileHeadline') ?? 'Your Headline'
+  isDarkMode.value = localStorage.getItem('cpt_li_isDarkMode') === 'true'
+  visibility.value = (localStorage.getItem('cpt_li_visibility') as 'public' | 'connections' | 'group') || 'public'
+
+  watch(postText, v => localStorage.setItem('cpt_li_postText', v))
+  watch(profileName, v => localStorage.setItem('cpt_li_profileName', v))
+  watch(profileHeadline, v => localStorage.setItem('cpt_li_profileHeadline', v))
+  watch(isDarkMode, v => localStorage.setItem('cpt_li_isDarkMode', String(v)))
+  watch(visibility, v => localStorage.setItem('cpt_li_visibility', v))
+  lsWatchersActive = true
+}
 
 export function useLinkedInPreview() {
+  if (import.meta.client) {
+    onMounted(hydrateFromLocalStorage)
+  }
 
   const shouldTruncate = computed(() => {
     return postText.value.length > SEE_MORE_CHAR_LIMIT && !isExpanded.value
@@ -98,6 +119,9 @@ export function useLinkedInPreview() {
     postText.value = ''
     isExpanded.value = false
     clearImage()
+    if (import.meta.client) {
+      localStorage.removeItem('cpt_li_postText')
+    }
   }
 
   function toggleExpand() {
@@ -116,6 +140,7 @@ export function useLinkedInPreview() {
     profileHeadline,
     profileAvatarUrl,
     isDarkMode,
+    visibility,
     isExpanded,
     shouldTruncate,
     formattedSegments,

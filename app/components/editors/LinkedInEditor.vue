@@ -31,20 +31,33 @@
       </div>
     </div>
 
-    <!-- Dark mode toggle -->
-    <div class="flex items-center justify-between">
-      <span class="text-xs font-medium text-slate-500">Dark mode preview</span>
-      <button
-        aria-label="Toggle dark mode"
-        class="relative w-9 h-5 rounded-full transition-colors duration-200 focus:outline-none"
-        :class="isDarkMode ? 'bg-indigo-500' : 'bg-slate-200'"
-        @click="toggleDarkMode()"
-      >
-        <span
-          class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200"
-          :class="isDarkMode ? 'translate-x-4' : 'translate-x-0'"
-        />
-      </button>
+    <!-- Visibility & Dark mode -->
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-medium text-slate-500">Visibility</span>
+        <select
+          v-model="visibility"
+          class="text-xs px-2 py-1 rounded-lg border border-slate-200 bg-white text-slate-700 focus:outline-none focus:ring-1 focus:ring-indigo-500/20 focus:border-indigo-300"
+        >
+          <option value="public">Public</option>
+          <option value="connections">Connections</option>
+          <option value="group">Group</option>
+        </select>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-medium text-slate-500">Dark mode</span>
+        <button
+          aria-label="Toggle dark mode"
+          class="relative w-9 h-5 rounded-full transition-colors duration-200 focus:outline-none"
+          :class="isDarkMode ? 'bg-indigo-500' : 'bg-slate-200'"
+          @click="toggleDarkMode()"
+        >
+          <span
+            class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200"
+            :class="isDarkMode ? 'translate-x-4' : 'translate-x-0'"
+          />
+        </button>
+      </div>
     </div>
 
     <!-- Post text -->
@@ -56,14 +69,23 @@
         class="w-full min-h-[180px] p-4 rounded-xl border border-slate-200 bg-white text-sm text-slate-800 leading-relaxed placeholder:text-slate-300 resize-y transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-300"
       />
       <div class="flex items-center justify-between px-1 mt-1">
-        <button
-          v-if="postText"
-          class="text-xs text-slate-400 hover:text-red-400 transition-colors"
-          @click="clear()"
-        >
-          Clear text
-        </button>
-        <span v-else />
+        <div class="flex items-center gap-2">
+          <button
+            v-if="postText && !showUndo"
+            class="text-xs text-slate-400 hover:text-red-400 transition-colors"
+            @click="clearWithUndo"
+          >
+            Clear text
+          </button>
+          <button
+            v-if="showUndo"
+            class="text-xs text-indigo-500 font-semibold hover:text-indigo-700 transition-colors"
+            @click="undoClear"
+          >
+            Undo
+          </button>
+        </div>
+        <span v-if="!postText && !showUndo" />
         <span
           class="text-xs font-medium tabular-nums transition-colors duration-200"
           :class="charCountClass"
@@ -76,9 +98,26 @@
 </template>
 
 <script setup lang="ts">
-const { postText, profileName, profileHeadline, profileAvatarUrl, isDarkMode, setAvatar, toggleDarkMode, clear } = useLinkedInPreview()
+const { postText, profileName, profileHeadline, profileAvatarUrl, isDarkMode, visibility, setAvatar, toggleDarkMode, clear } = useLinkedInPreview()
 
 const avatarInput = ref<HTMLInputElement | null>(null)
+const savedText = ref('')
+const showUndo = ref(false)
+let undoTimer: ReturnType<typeof setTimeout> | null = null
+
+function clearWithUndo() {
+  savedText.value = postText.value
+  clear()
+  showUndo.value = true
+  if (undoTimer) clearTimeout(undoTimer)
+  undoTimer = setTimeout(() => { showUndo.value = false }, 3000)
+}
+
+function undoClear() {
+  postText.value = savedText.value
+  showUndo.value = false
+  if (undoTimer) clearTimeout(undoTimer)
+}
 
 function onAvatarChange(e: Event) {
   const input = e.target as HTMLInputElement

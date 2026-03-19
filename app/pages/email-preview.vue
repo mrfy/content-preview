@@ -1,15 +1,17 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     <!-- Page header -->
-    <div class="flex items-center justify-between mb-8">
-      <div>
-        <h1 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+    <div class="mb-8">
+      <div class="flex items-center justify-between gap-2">
+        <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
           <img :src="'/Email_icon.svg'" alt="Email" class="w-7 h-7" />
           Email Preview
         </h1>
-        <p class="text-sm text-slate-500 mt-1">Paste HTML and see how your email renders</p>
+        <div class="flex-shrink-0">
+          <UiExportButton target-id="email-preview-container" filename="email-preview.png" @exported="onExport" />
+        </div>
       </div>
-      <UiExportButton target-id="email-preview-container" filename="email-preview.png" @exported="onExport" />
+      <p class="text-sm text-slate-500 mt-1 hidden sm:block">Paste HTML and see how your email renders</p>
     </div>
 
     <!-- Two-column layout -->

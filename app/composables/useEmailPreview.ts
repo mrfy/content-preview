@@ -107,8 +107,19 @@ body{margin:0;padding:0;font-family:Georgia,'Times New Roman',serif;background:#
 
 const htmlContent = ref('')
 const sanitizedHtml = computed(() => sanitizeHtml(htmlContent.value))
+let emailLsActive = false
+
+function hydrateEmailFromLocalStorage() {
+  if (emailLsActive) return
+  htmlContent.value = localStorage.getItem('cpt_email_htmlContent') ?? ''
+  watch(htmlContent, v => localStorage.setItem('cpt_email_htmlContent', v))
+  emailLsActive = true
+}
 
 export function useEmailPreview() {
+  if (import.meta.client) {
+    onMounted(hydrateEmailFromLocalStorage)
+  }
 
   function loadTemplate(index: number) {
     if (index >= 0 && index < templates.length) {
@@ -122,6 +133,9 @@ export function useEmailPreview() {
 
   function clear() {
     htmlContent.value = ''
+    if (import.meta.client) {
+      localStorage.removeItem('cpt_email_htmlContent')
+    }
   }
 
   return {

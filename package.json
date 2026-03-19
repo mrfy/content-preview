@@ -10,6 +10,10 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@codemirror/lang-html": "^6.4.11",
+    "@codemirror/state": "^6.6.0",
+    "@codemirror/view": "^6.40.0",
+    "codemirror": "^6.0.2",
     "dompurify": "^3.2.4",
     "html-to-image": "^1.11.11",
     "nuxt": "^3.16.0",
